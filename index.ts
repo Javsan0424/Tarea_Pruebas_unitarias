@@ -1,12 +1,11 @@
 import express from 'express';
+import plotboxroutes from './src/routes/list';
 
 const app = express();
 const Port = 3000
 
 
-app.use("/", (req, res) => {
-    res.send("Hello, World!");
-});
+app.use("/", plotboxroutes );
 
 app.listen(Port, () => console.log('Server running'))
 
