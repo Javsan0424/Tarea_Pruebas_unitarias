@@ -1,4 +1,4 @@
-import { Listcontroller } from "./src/controller/list"; // Note: Fixed capitalization
+import { Listcontroller } from "./src/controller/list";
 import { Database } from "./src/db/Fakedb";
 
 jest.mock('./src/db/Fakedb', () => ({
@@ -8,7 +8,7 @@ jest.mock('./src/db/Fakedb', () => ({
 }));
 
 describe("ListController - boxplot calculation", () => {
-  let controller: Listcontroller; // Note: Fixed capitalization
+  let controller: Listcontroller;
   let mockDatabase: jest.Mocked<Database>;
 
   beforeEach(() => {
