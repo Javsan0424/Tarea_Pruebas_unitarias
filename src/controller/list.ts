@@ -1,8 +1,11 @@
 import { Database } from "../db/Fakedb";
 
-const database = new Database();
-
 export class Listcontroller {
+    private database: Database;
+
+    constructor() {
+        this.database = new Database();
+    }
 
     async calculatePercentile(data: number[], percentile: number) {
         const index = (percentile / 100) * (data.length - 1);
@@ -16,7 +19,7 @@ export class Listcontroller {
     }
 
     async boxplot() {
-        let data = await database.db();
+        let data = await this.database.db();
 
         if (!data || data.length === 0) {
             throw new Error("No data available");
